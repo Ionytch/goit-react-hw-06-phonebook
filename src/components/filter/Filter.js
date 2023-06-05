@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 // import { setFilter } from "redux/actions";
 import { setFilter } from "redux/filterSlice";
+import { FilterStyle } from "./Filter,styled";
 
 export const Filter = () => {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export const Filter = () => {
     };
 
 
-    return (<div>
+    return (<FilterStyle>
         <h2>filter</h2>
         <form>
             <label for="filter">
@@ -32,7 +33,7 @@ export const Filter = () => {
                 
             ></input>
                 </form>  
-        </div>
+        </FilterStyle>
        
     )
 }

@@ -1,15 +1,16 @@
 import { Contact } from "./Contact"
+import { ContactsList } from "./Contacts.styled"
 
 
 const Contacts = ({ names }) => {
         return (
-            <ul>
+            <ContactsList>
                 {
                   names.map(name => (
                   <li key={name.id}>
                   <Contact name={name} />
                   </li>))}
-            </ul>
+            </ContactsList>
         )    
 }
 

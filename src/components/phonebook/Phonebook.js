@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 // import { addContact } from "redux/actions";
 import { addContact } from "redux/contactSlice";
+import { PhonebookStyle } from "./Phonebook.styled";
 
 export const Phonebook=()=> {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export const Phonebook=()=> {
         form.reset();
         };
 
-        return (<div>
+        return (<PhonebookStyle>
             <h2>PHONEBOOK</h2>
             <form onSubmit={handleSubmit}>
                 <label for="name">
@@ -41,7 +42,7 @@ export const Phonebook=()=> {
                 <button type="submit">ADD CONTACT</button>
 
             </form>
-        </div>
+        </PhonebookStyle>
        
         )
     

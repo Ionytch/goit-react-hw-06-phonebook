@@ -1,5 +1,7 @@
-import { Contact } from "./Contact"
-import { ContactsList } from "./Contacts.styled"
+import { Contact } from "./Contact";
+import { ContactsList } from "./Contacts.styled";
+import PropTypes from "prop-types";
+
 
 
 const Contacts = ({ names }) => {
@@ -14,4 +16,7 @@ const Contacts = ({ names }) => {
         )    
 }
 
+Contacts.propTypes = {
+    names: PropTypes.array.isRequired,
+};
 export default Contacts

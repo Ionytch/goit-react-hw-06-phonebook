@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-// import { deleteContact } from "redux/actions";
 import { deleteContact } from "redux/contactSlice";
+import PropTypes from "prop-types";
 
 
 export const Contact = ({ name }) => {
@@ -13,3 +13,6 @@ export const Contact = ({ name }) => {
             <button type="button" onClick={handleDelete}>DELETE</button>
     </>)
 }
+Contact.propTypes = {
+    name: PropTypes.array.isRequired,
+};

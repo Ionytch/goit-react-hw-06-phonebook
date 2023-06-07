@@ -48,4 +48,3 @@ export const contactsReducer = persistReducer(
 
 
 export const { addContact, deleteContact } = contactsSlice.actions;
-// export const contactsReducer = contactsSlice.reducer;

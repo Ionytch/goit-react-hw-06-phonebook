@@ -5,13 +5,14 @@ import { PhonebookStyle } from "./Phonebook.styled";
 
 export const Phonebook=()=> {
     const dispatch = useDispatch();
-    const contacts = useSelector(state => state.contacts);
+    const contacts = useSelector(state => state.contacts.contacts);
+    console.log(contacts);
 
-  const doesContactExist = newName => {
-    return contacts.some(
-      contact => contact.name.toLowerCase() === newName.toLowerCase()
-    );
-  };
+  function doesContactExist(newName) {
+        return contacts.some(
+            contact => contact.name.toLowerCase() === newName.toLowerCase()
+        );
+    }
     
     const handleSubmit = e => {
         e.preventDefault();
@@ -38,7 +39,7 @@ export const Phonebook=()=> {
                 <input
                     type="text"
                     name="name"
-                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                    // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                     required
                 ></input>
@@ -48,7 +49,7 @@ export const Phonebook=()=> {
                 <input
                     type="tel"
                     name="number"
-                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                    // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                 ></input>

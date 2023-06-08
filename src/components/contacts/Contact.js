@@ -15,9 +15,11 @@ export const Contact = ({ name }) => {
 }
 
 Contact.propTypes = {
-    name: PropTypes.shape({
+    name: PropTypes.arrayOf(
+        PropTypes.shape({
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         number: PropTypes.number.isRequired,
-    }),
+        }).isRequired,
+    ).isRequired,
    };

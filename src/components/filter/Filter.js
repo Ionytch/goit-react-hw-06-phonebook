@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { setFilter } from "redux/actions";
 import { setFilter } from "redux/filterSlice";
 import { FilterStyle } from "./Filter,styled";
 
 export const Filter = () => {
     const dispatch = useDispatch();
-    
+    const filtered=useSelector(state => state.filter);
     const changeFilter = e => {
         // e.preventDefault();
         // const form = e.target;
@@ -28,7 +28,7 @@ export const Filter = () => {
             <input
             type="text"
             name="filter"
-            // value={filter}
+            value={filtered}
             onChange={changeFilter}
                 
             ></input>

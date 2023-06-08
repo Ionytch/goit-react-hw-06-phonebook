@@ -13,6 +13,11 @@ export const Contact = ({ name }) => {
             <button type="button" onClick={handleDelete}>DELETE</button>
     </>)
 }
+
 Contact.propTypes = {
-    name: PropTypes.array.isRequired,
-};
+    name: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.number.isRequired,
+    }),
+   };
